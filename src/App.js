@@ -8,7 +8,7 @@ class App extends Component{
       <div>{
       
         //Array.from(word).map((c,i)=><CharacterCard value={c} key={i}/>)
-        <WordCard value ="hello"/>
+        <WordCard value ="hello00"/>
       }
       </div>
     );
