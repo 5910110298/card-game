@@ -1,6 +1,7 @@
 import CharacterCard from "./CharacterCard";
-
-export default class WordCard extends Coponent{
+import React, { Component }from 'react';
+import './App.css';
+export default class WordCard extends Component{
     render(){
         return(
             <div>
