@@ -1,16 +1,13 @@
-import React, { Component }from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import prepareStateFromWord from "./WordCard";
-import _ from 'lodash';
+import WordCard from './WordCard';
 
+const word = "Hello";
 class App extends Component{
   render(){
     return(
-      <div>{
-      
-        //Array.from(word).map((c,i)=><CharacterCard value={c} key={i}/>)
-        <prepareStateFromWord  value ="hello"/>
-      }
+      <div>
+        <WordCard value={word}/>
       </div>
     );
   }
