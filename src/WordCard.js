@@ -2,7 +2,7 @@ import CharacterCard from "./CharacterCard";
 import React, { Component }from 'react';
 import './App.css';
 import _ from 'lodash';
-const prepareStateFromWord = (given_word) => {
+ const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
     return {
@@ -13,6 +13,7 @@ const prepareStateFromWord = (given_word) => {
         completed: false
     }
 }
+
 export default class WordCard extends Component {
     constructor(props){
         super(props)
@@ -31,7 +32,9 @@ export default class WordCard extends Component {
             }
         }
     }
-    
+    refreshPage(){
+        window.location.reload();
+    } 
        
     render(){  
         var score =this.state.attemt
@@ -40,7 +43,7 @@ export default class WordCard extends Component {
         else if(score== 3) this.grade="ordinary."
         else if(score <4 ) this.grade="stupid."
         else this.grade="very stupid."
-        
+       
         return(
             
             <div className="App">
@@ -51,8 +54,9 @@ export default class WordCard extends Component {
                     )
                 }
                 <p>Round : {this.state.attemt}</p>
-                
-                 <h1>{this.state.completed? "You are  "+this.grade : ""}</h1>
+                 <h1>{this.state.completed? "You are  "+this.grade : ""}</h1>  
+                 <button type="submit"  onClick={this.refreshPage}>Random</button>
+
             </div>
         )
     }

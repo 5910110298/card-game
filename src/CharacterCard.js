@@ -30,6 +30,7 @@ export default class CharacterCard extends Component{
             <div className={className} onClick={this.activate}>
                 {this.props.value}
             </div>
+             
         )
     }
 }
