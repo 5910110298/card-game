@@ -5,13 +5,16 @@ export default class CharacterCard extends Component{
         super(props)
         this.state = {
             active : false,
+            count:0,
         }
     }
 
     activate = () => {
         if(!this.state.active){
             this.props.activationHandler(this.props.value)
+            this.count+1
             this.setState({active: true})
+            
         }
     }
     componentDidUpdate(prevProps){
@@ -20,7 +23,9 @@ export default class CharacterCard extends Component{
         }
       }
     render(){
-        let className = `card ${this.state.active ? 'activeCard' : ''}`
+       
+        let className =`card ${this.state.active ? 'activeCard1' : ''}`
+        
         return(
             <div className={className} onClick={this.activate}>
                 {this.props.value}

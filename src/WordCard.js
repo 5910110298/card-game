@@ -1,6 +1,5 @@
 import CharacterCard from "./CharacterCard";
 import React, { Component }from 'react';
-
 import './App.css';
 import _ from 'lodash';
 const prepareStateFromWord = (given_word) => {
@@ -18,6 +17,7 @@ export default class WordCard extends Component {
     constructor(props){
         super(props)
         this.state = prepareStateFromWord(this.props.value)
+        this.grade
     }
     activationHandler = (c) => {
         let guess = [this.state.guess]+c
@@ -27,12 +27,22 @@ export default class WordCard extends Component {
                 this.setState({guess: [], completed: true})
             }else{
                 this.setState({guess: [], attemt: this.state.attemt + 1})
+     
             }
         }
     }
-
-    render(){
+    
+       
+    render(){  
+        var score =this.state.attemt
+        if(score == 1)this.grade="genius."
+        else if(score == 2) this.grade="clever."
+        else if(score== 3) this.grade="ordinary."
+        else if(score <4 ) this.grade="stupid."
+        else this.grade="very stupid"
+        
         return(
+            
             <div className="App">
                 {
                     Array.from(this.state.chars).map(
@@ -41,7 +51,8 @@ export default class WordCard extends Component {
                     )
                 }
                 <p>Round : {this.state.attemt}</p>
-                <p>{this.state.completed? "you win" : ""}</p>
+                
+                 <p>{this.state.completed? "Your are  "+this.grade : ""}</p>
             </div>
         )
     }
