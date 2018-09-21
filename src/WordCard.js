@@ -14,6 +14,7 @@ import _ from 'lodash';
     }
 }
 
+
 export default class WordCard extends Component {
     constructor(props){
         super(props)
@@ -34,14 +35,15 @@ export default class WordCard extends Component {
     }
     refreshPage(){
         window.location.reload();
+    
     } 
        
     render(){  
         var score =this.state.attemt
         if(score == 1)this.grade="genius."
         else if(score == 2) this.grade="clever."
-        else if(score== 3) this.grade="ordinary."
-        else if(score <4 ) this.grade="stupid."
+        else if(score>2&&score<10) this.grade="ordinary."
+        else if(score>=10&&score<20) this.grade="stupid."
         else this.grade="very stupid."
        
         return(
@@ -55,7 +57,7 @@ export default class WordCard extends Component {
                 }
                 <p>Round : {this.state.attemt}</p>
                  <h1>{this.state.completed? "You are  "+this.grade : ""}</h1>  
-                 <button type="submit"  onClick={this.refreshPage}>Random</button>
+                 <button type="submit"  onClick={this.refreshPage}>Restart Game</button>
 
             </div>
         )
