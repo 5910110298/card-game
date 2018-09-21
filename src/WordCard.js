@@ -52,7 +52,7 @@ export default class WordCard extends Component {
                 }
                 <p>Round : {this.state.attemt}</p>
                 
-                 <p>{this.state.completed? "You are  "+this.grade : ""}</p>
+                 <h1>{this.state.completed? "You are  "+this.grade : ""}</h1>
             </div>
         )
     }
