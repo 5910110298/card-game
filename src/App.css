@@ -31,15 +31,8 @@
   user-select:none;
 
 }
-.activeCard1{
-  color: red;
-  background:pink;
-}
-.activeCard2{
-  color: blue;
-  background:burlywood;
-}
-.activeCard3{
+
+.activeCard{
   color:green;
   background: yellowgreen;
 }
