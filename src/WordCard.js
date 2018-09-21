@@ -39,7 +39,7 @@ export default class WordCard extends Component {
         else if(score == 2) this.grade="clever."
         else if(score== 3) this.grade="ordinary."
         else if(score <4 ) this.grade="stupid."
-        else this.grade="very stupid"
+        else this.grade="very stupid."
         
         return(
             
@@ -52,7 +52,7 @@ export default class WordCard extends Component {
                 }
                 <p>Round : {this.state.attemt}</p>
                 
-                 <p>{this.state.completed? "Your are  "+this.grade : ""}</p>
+                 <p>{this.state.completed? "You are  "+this.grade : ""}</p>
             </div>
         )
     }
