@@ -37,6 +37,7 @@ export default class WordCard extends Component {
         window.location.reload();
     
     } 
+    
        
     render(){  
         var score =this.state.attemt
@@ -58,7 +59,6 @@ export default class WordCard extends Component {
                 <p>Round : {this.state.attemt}</p>
                  <h1>{this.state.completed? "You are  "+this.grade : ""}</h1>  
                  <button type="submit"  onClick={this.refreshPage}>Restart Game</button>
-
             </div>
         )
     }
